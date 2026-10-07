@@ -1,0 +1,15 @@
+{
+  "name": "herdr-extensions",
+  "version": "1.0.0",
+  "description": "Start Herdr tabs with an agent already primed on a task from a Linear or GitHub ticket, a chat thread or a plain description.",
+  "author": {
+    "name": "Eleni Lixourioti"
+  },
+  "keywords": [
+    "herdr",
+    "agents",
+    "tabs",
+    "linear",
+    "github"
+  ]
+}

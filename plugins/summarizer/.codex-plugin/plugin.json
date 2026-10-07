@@ -1,0 +1,29 @@
+{
+  "name": "summarizer",
+  "version": "1.0.0",
+  "description": "Turn shipped work into short announcements, such as a clickbait-style Slack post built from real commits and tickets.",
+  "author": {
+    "name": "Eleni Lixourioti"
+  },
+  "keywords": [
+    "announcement",
+    "slack",
+    "summary",
+    "changelog"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Summarizer",
+    "shortDescription": "Announce shipped work",
+    "longDescription": "Turn shipped work into short announcements, such as a clickbait-style Slack post built from real commits and tickets.",
+    "developerName": "Eleni Lixourioti",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Write a clickbait announcement for my latest work"
+    ]
+  }
+}

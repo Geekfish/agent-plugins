@@ -1,0 +1,14 @@
+{
+  "name": "summarizer",
+  "version": "1.0.0",
+  "description": "Turn shipped work into short announcements, such as a clickbait-style Slack post built from real commits and tickets.",
+  "author": {
+    "name": "Eleni Lixourioti"
+  },
+  "keywords": [
+    "announcement",
+    "slack",
+    "summary",
+    "changelog"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "geekfish",
+  "owner": {
+    "name": "Eleni Lixourioti"
+  },
+  "metadata": {
+    "description": "Agent skills and plugins by Eleni Lixourioti",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "herdr-extensions",
+      "source": "./plugins/herdr-extensions",
+      "description": "Start Herdr tabs with an agent already primed on a task from a Linear or GitHub ticket, a chat thread or a plain description.",
+      "author": {
+        "name": "Eleni Lixourioti"
+      },
+      "keywords": [
+        "herdr",
+        "agents",
+        "tabs",
+        "linear",
+        "github"
+      ],
+      "category": "productivity"
+    },
+    {
+      "name": "summarizer",
+      "source": "./plugins/summarizer",
+      "description": "Turn shipped work into short announcements, such as a clickbait-style Slack post built from real commits and tickets.",
+      "author": {
+        "name": "Eleni Lixourioti"
+      },
+      "keywords": [
+        "announcement",
+        "slack",
+        "summary",
+        "changelog"
+      ],
+      "category": "productivity"
+    }
+  ]
+}

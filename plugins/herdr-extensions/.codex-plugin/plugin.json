@@ -1,0 +1,30 @@
+{
+  "name": "herdr-extensions",
+  "version": "1.0.0",
+  "description": "Start Herdr tabs with an agent already primed on a task from a Linear or GitHub ticket, a chat thread or a plain description.",
+  "author": {
+    "name": "Eleni Lixourioti"
+  },
+  "keywords": [
+    "herdr",
+    "agents",
+    "tabs",
+    "linear",
+    "github"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Herdr Extensions",
+    "shortDescription": "Start Herdr tabs with a primed agent",
+    "longDescription": "Start Herdr tabs with an agent already primed on a task from a Linear or GitHub ticket, a chat thread or a plain description.",
+    "developerName": "Eleni Lixourioti",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Start a new Herdr task for ABC-123"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "geekfish",
+  "plugins": [
+    {
+      "name": "herdr-extensions",
+      "source": "./plugins/herdr-extensions",
+      "skills": [
+        "skills"
+      ]
+    },
+    {
+      "name": "summarizer",
+      "source": "./plugins/summarizer",
+      "skills": [
+        "skills"
+      ]
+    }
+  ]
+}
