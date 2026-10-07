@@ -29,7 +29,18 @@ The skill holds no workspace list. Read `~/my-workspace.toml`. It has one `[[wor
 | `prompt_suffix` | Optional. Append this sentence to the agent prompt in step 7. |
 | `tracker` | Optional. `linear`, `github` (the repo of `cwd`), or `github:<owner>/<repo>`. A top-level `tracker` key above the first block sets the default. If neither is set and a step needs it, ask the user. |
 
-If the file does not exist, stop and tell the user. Offer to copy `references/my-workspace.toml.example` (next to this SKILL.md) to `~/my-workspace.toml`. After they agree, copy it, tell them to edit it later, and continue with its contents.
+If the file does not exist, set it up with the user before continuing:
+
+1. List the existing Herdr workspaces, and take each one's folder from its first pane:
+
+   ```bash
+   herdr workspace list | jq -r '.result.workspaces[] | .workspace_id + " " + .label'
+   herdr pane list --workspace <WS_ID> | jq -r '.result.panes[0].cwd'
+   ```
+
+2. Show them as a draft list, label and folder. Ask which to keep, which to add, and a one-line description for each.
+3. Ask where their tickets live (`linear`, `github` or none), to set the top-level `tracker`.
+4. Draft `~/my-workspace.toml` in the format of `references/my-workspace.toml.example`, next to this SKILL.md. Show the draft. **Wait for approval**, then write it.
 
 If the user names a workspace that is not in the file, ask for its cwd and description, then append a `[[workspace]]` block to `~/my-workspace.toml` before continuing.
 

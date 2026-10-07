@@ -4,7 +4,7 @@ Skills and plugins for coding agents. One marketplace serves Claude Code, Codex 
 
 | Plugin | Skills | What it does |
 |---|---|---|
-| [herdr-extensions](plugins/herdr-extensions) | `herdr-new-task` | Starts a [Herdr](https://herdr.dev/) tab with an agent already primed on a task. Reads Linear or GitHub tickets, chat threads or a plain description. |
+| [herdr-extensions](plugins/herdr-extensions/README.md) | `herdr-new-task` | Starts a [Herdr](https://herdr.dev/) tab with an agent already primed on a task. Reads Linear or GitHub tickets, chat threads or a plain description. |
 | [summarizer](plugins/summarizer) | `clickbait-announce` | Turns shipped work into a clickbait-style Slack announcement, built only from real commits, tickets and links. |
 
 ## Install
@@ -28,12 +28,6 @@ codex plugin add summarizer@geekfish
 ### OpenCode
 
 OpenCode reads the catalog in `.opencode/marketplace.json` through a separate plugin manager. It needs its own install process.
-
-## herdr-new-task setup
-
-The skill reads your Herdr workspaces from `~/my-workspace.toml`. On first use it offers to copy the example from `references/my-workspace.toml.example`.
-
-Agent kinds that need special launch steps have a harness file named `<kind>.md`. The skill ships some in `references/harnesses/`. Put your own in `~/.config/herdr-new-task/harnesses/`.
 
 ## Layout
 
