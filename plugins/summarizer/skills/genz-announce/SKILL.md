@@ -1,6 +1,6 @@
 ---
 name: genz-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in Gen Z or Gen Alpha slang. Output stays safe for work. Triggers include "Gen Z announcement", "brainrot announcement", "announce X in Gen Z slang", "no cap announcement", "/genz-announce". For YouTube clickbait style, use clickbait-announce.
+description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in Gen Z slang. Output stays safe for work. Triggers include "Gen Z announcement", "announce X in Gen Z slang", "no cap announcement", "/genz-announce". For YouTube clickbait style, use clickbait-announce.
 ---
 
 # Gen Z Announce
@@ -49,7 +49,6 @@ Budget: 100 to 160 words, excluding links and code. It is a caption, not a chang
 | Truth | no cap, fr fr, lowkey, highkey, ngl, real |
 | Old thing | mid, cooked, L, flop era, the ick, NPC behaviour |
 | Vibe | aura, glow up, era, main character, delulu, rizz |
-| Gen Alpha | brainrot, sigma, aura points, fanum tax, skibidi, 6 7 |
 
 Use one or two slang terms per line. Six per line reads as parody.
 
@@ -99,4 +98,4 @@ https://github.com/example/dotfiles
 
 - **Slang in the fact line.** "the cache is bussin" says nothing. The fact stays plain.
 - **Hidden profanity.** `af` is still profanity. Step 4 applies to acronyms too.
-- **Guessed shortcodes.** `:sigma:` is not in every workspace. Search first.
+- **Guessed shortcodes.** `:no-cap:` is not in every workspace. Search first.

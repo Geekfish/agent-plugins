@@ -19,7 +19,7 @@ Ask for example: "clickbait announcement for my work on the dotfiles repo" or "a
 
 ## genz-announce
 
-Writes the post in Gen Z and Gen Alpha social media slang. The post stays safe for work: no profanity, and roast slang targets code, never people.
+Writes the post in Gen Z social media slang. The post stays safe for work: no profanity, and roast slang targets code, never people.
 
 Ask for example: "Gen Z announcement for my work on the dotfiles repo" or "announce ABC-123 in Gen Z slang".
 
