@@ -185,17 +185,25 @@ Use kind-specific arguments:
 
 | Kind | Arguments after `--` |
 |---|---|
-| `claude` | `--model <MODEL> --effort <EFFORT> --permission-mode auto` |
+| `claude` | `--model <MODEL> --effort <EFFORT> --permission-mode auto "<PROMPT>"` |
 | `codex` | `--model <MODEL> --config model_reasoning_effort=<EFFORT> --approve-for-me` |
 
 Omit `--model` and the effort argument for Claude or Codex when the user did not select them. Other kinds take their own flags, so pass none unless the user asked for some.
 
+Claude takes the prompt at launch, as its last argument. Claude Code wraps a long typed-in paste, such as one sent by `herdr agent prompt`, in `<pasted_content>` tags. The agent then treats it as text from someone else and asks for an instruction instead of starting. Herdr quotes the arguments for the shell, so URLs with `?` or `&` are safe.
+
 ### Launch and prompt example
 
-Claude with Opus and high effort:
+Claude with Opus and high effort, prompt at launch:
 
 ```bash
-herdr agent start abc123profilepostcodedropped --kind claude --pane pane-123 --timeout 60000 -- --model opus --effort high --permission-mode auto
+herdr agent start abc123profilepostcodedropped --kind claude --pane pane-123 --timeout 60000 -- --model opus --effort high --permission-mode auto "Work on https://linear.app/acme/issue/ABC-123. Start by reading the ticket, then investigate in this workspace."
+```
+
+Codex, prompt after launch:
+
+```bash
+herdr agent start abc123profilepostcodedropped --kind codex --pane pane-123 --timeout 60000 -- --approve-for-me
 herdr agent prompt abc123profilepostcodedropped "Work on https://linear.app/acme/issue/ABC-123. Start by reading the ticket, then investigate in this workspace."
 ```
 
@@ -228,7 +236,7 @@ Ignore an MCP server that failed to start. The agent still runs. Mention it in t
 
 ### Send the prompt
 
-Skip this for a kind whose harness file passes the prompt at launch.
+Skip this for `claude`, and for a kind whose harness file passes the prompt at launch.
 
 ```bash
 herdr agent prompt <AGENT_NAME> "<PROMPT>"
