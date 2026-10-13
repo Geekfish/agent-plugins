@@ -1,7 +1,7 @@
 {
   "name": "summarizer",
-  "version": "1.0.0",
-  "description": "Turn shipped work into short announcements, such as a clickbait-style Slack post built from real commits and tickets.",
+  "version": "1.1.0",
+  "description": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style or Gen Z slang.",
   "author": {
     "name": "Eleni Lixourioti"
   },
