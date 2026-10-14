@@ -32,9 +32,28 @@ the way my laptop glowed up 😭
 `chezmoi apply` writes real files instead of 20 hand-made links.
 ```
 
+## brainrot-announce
+
+Writes the post in internet brainrot meme style: Italian brainrot creatures, skibidi, sigma, Ohio, 6 7. The post stays safe for work: no sexual or body memes, no memes built on a real person, and roast memes target code, never people.
+
+Ask for example: "brainrot announcement for my work on the dotfiles repo" or "announce ABC-123 in brainrot".
+
+```
+*bombardiro dotfilo has entered the chat* 🐊✈️🦀
+
+chat is this real 💀 6 7 🙌
+
+• :rocket: *symlink spaghetti got fanum taxed* :skull:
+`chezmoi apply` writes real files instead of 20 hand-made links.
+```
+
 ## The `--calm` flag
 
-Both skills accept `--calm`. The post keeps the same shape with one emoji per line. In clickbait-announce, only the title uses ALL CAPS. In genz-announce, only the hook and bullet titles use slang.
+All skills accept `--calm`. The post keeps the same shape with one emoji per line. In clickbait-announce, only the title uses ALL CAPS. In genz-announce and brainrot-announce, only the hook and bullet titles use slang or memes.
+
+## Shared rules
+
+The three skills share fact collection, emoji harvest, bullet shape, the `--calm` flag and the safe-for-work rules. They live in [references/announce-rules.md](references/announce-rules.md). Each skill adds its own budget, line formats and term tables.
 
 ## Requirements
 
