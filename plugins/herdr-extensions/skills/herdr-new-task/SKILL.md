@@ -165,15 +165,24 @@ The pane id is at `.result.root_pane.pane_id`.
 
 Agent name: the label with every non-alphanumeric character removed, lowercased, cut to 32 characters — `ABC-123-profile-postcode-dropped` becomes `abc123profilepostcodedropped`. It must match `[a-z][a-z0-9_-]{0,31}` and be unique among live agents (`herdr agent list`). If taken, append `-2`.
 
-### Build the prompt
+### Write the brief
 
-Build the prompt before you launch anything, because some kinds take it at launch. Build it from what you resolved:
+The agent's instructions go in a brief file, and the launch prompt only points at it. A pane's terminal accepts about 1,000 bytes in one write. A longer launch command arrives cut off, leaves an unterminated quote at the shell prompt, and the agent never starts. Keep every launch command under 500 bytes, whatever the kind.
 
+Write the brief to `~/.config/herdr-new-task/briefs/<LABEL>.md` (create the folder). Build it from what you resolved:
+
+- First line: a heading with the ticket id and title, or the slug.
 - Ticket: `Work on <TICKET_URL> . Start by reading the ticket, then investigate in this workspace.`
 - Chat thread as well: add `Reported in this thread: <THREAD_URL>` before the "Start by reading" sentence.
 - No ticket: `<the user's description, in full> . Start by orienting yourself in this workspace.`
+- Everything else the user asked for: constraints, files to read first, what done means, how to hand the work over. Put it all in the brief, never in the launch command.
 - If the workspace has a `prompt_suffix`, end with it.
 - If the task is to explain a failure, error or incident rather than make a planned change, and the suffix did not already say so, end with: `Do not change code until you have reported your diagnosis.`
+
+The launch prompt is then one line:
+
+- Ticket: `Work on <TICKET_URL> . Your full brief is in <BRIEF_PATH> : read it first and follow it.`
+- No ticket: `Your task brief is in <BRIEF_PATH> : read it first and follow it.`
 
 ### Launch
 
@@ -190,28 +199,28 @@ Use kind-specific arguments:
 
 Omit `--model` and the effort argument for Claude or Codex when the user did not select them. Other kinds take their own flags, so pass none unless the user asked for some.
 
-Claude takes the prompt at launch, as its last argument. Claude Code wraps a long typed-in paste, such as one sent by `herdr agent prompt`, in `<pasted_content>` tags. The agent then treats it as text from someone else and asks for an instruction instead of starting. Herdr quotes the arguments for the shell, so URLs with `?` or `&` are safe.
+Claude takes the launch prompt at launch, as its last argument. Claude Code wraps a long typed-in paste, such as one sent by `herdr agent prompt`, in `<pasted_content>` tags. The agent then treats it as text from someone else and asks for an instruction instead of starting. The one-line prompt avoids both that and the byte limit above. Herdr quotes the arguments for the shell, so URLs with `?` or `&` are safe.
 
 ### Launch and prompt example
 
 Claude with Opus and high effort, prompt at launch:
 
 ```bash
-herdr agent start abc123profilepostcodedropped --kind claude --pane pane-123 --timeout 60000 -- --model opus --effort high --permission-mode auto "Work on https://linear.app/acme/issue/ABC-123. Start by reading the ticket, then investigate in this workspace."
+herdr agent start abc123profilepostcodedropped --kind claude --pane pane-123 --timeout 60000 -- --model opus --effort high --permission-mode auto "Work on https://linear.app/acme/issue/ABC-123 . Your full brief is in /Users/me/.config/herdr-new-task/briefs/ABC-123-profile-postcode-dropped.md : read it first and follow it."
 ```
 
 Codex, prompt after launch:
 
 ```bash
 herdr agent start abc123profilepostcodedropped --kind codex --pane pane-123 --timeout 60000 -- --approve-for-me
-herdr agent prompt abc123profilepostcodedropped "Work on https://linear.app/acme/issue/ABC-123. Start by reading the ticket, then investigate in this workspace."
+herdr agent prompt abc123profilepostcodedropped "Work on https://linear.app/acme/issue/ABC-123 . Your full brief is in /Users/me/.config/herdr-new-task/briefs/ABC-123-profile-postcode-dropped.md : read it first and follow it."
 ```
 
 Perform the readiness checks before sending the prompt.
 
 ### Make sure that the agent is really running
 
-A launch command does not confirm that the agent survived. `herdr agent start` reports success as soon as it sends the launch command. A CLI that auto-updates on launch prints its release notes, tells you to restart it, and exits. A prompt sent to that pane goes to the shell and is lost.
+A launch command does not confirm that the agent survived. `herdr agent start` reports success as soon as it sends the launch command, and it can report `timed out waiting for agent startup` while the agent is already running and reading the brief. Trust the pane, not the exit code. A CLI that auto-updates on launch prints its release notes, tells you to restart it, and exits. A prompt sent to that pane goes to the shell and is lost.
 
 Check the pane after every launch:
 
@@ -230,7 +239,11 @@ The agent is running when both are true:
 | `claude` | the Claude Code prompt box |
 | `codex` | `Ask Codex to do anything` |
 
-If the pane shows a shell prompt, an update notice, a crash, or a login request, or the pane has no row in `herdr agent list`, the agent is not running. Launch it again with the same pane, then check again. An auto-update needs one restart and then works. Stop after two failed attempts and report what the pane shows, because a login or a missing binary needs the user.
+If the pane shows a shell prompt, an update notice, a crash, or a login request, the agent is not running. Launch it again with the same pane, then check again. An auto-update needs one restart and then works. Stop after two failed attempts and report what the pane shows, because a login or a missing binary needs the user.
+
+If the pane shows your launch command sitting at the shell prompt, cut off mid-sentence, the command was too long for the terminal. Clear the line with `herdr pane send-keys <PANE_ID> c-c`, shorten the launch prompt to the one line above, and launch again.
+
+A pane that shows the agent's input box but has no row in `herdr agent list` is still running: Herdr's detection timed out, nothing else. If instead `herdr agent start` answers `agent_name_taken` for a pane whose agent is not running, that pane holds a stale record and refuses a relaunch as busy. Close that tab if this skill created it, create a new work tab, and launch there under a new name.
 
 Ignore an MCP server that failed to start. The agent still runs. Mention it in the final report.
 
@@ -262,6 +275,7 @@ Output exactly these lines and nothing else. No preamble, no ticket summary, no 
 - Tab "<tab label>" created
 - Agent <agent name> (<kind>) prompted with <the full prompt text you sent>
 - Agent <agent name> (<kind>, <model> <effort>) prompted with <the full prompt text you sent>
+- Brief written to <BRIEF_PATH>
 - Ticket <TICKET-ID> assigned to you
 ```
 
