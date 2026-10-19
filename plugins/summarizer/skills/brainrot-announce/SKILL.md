@@ -1,6 +1,6 @@
 ---
 name: brainrot-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in internet brainrot meme style, such as Italian brainrot creatures, skibidi, sigma, Ohio, 6 7. SFW. Triggers include "brainrot announcement", "announce X in brainrot", "skibidi announcement", "/brainrot-announce". For everyday Gen Z slang, use genz-announce. For YouTube clickbait style, use clickbait-announce. For British slang (innit, bruv), use british-slang-announce.
+description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in internet brainrot meme style, such as Italian brainrot creatures, skibidi, sigma, Ohio, 6 7. SFW. Triggers include "brainrot announcement", "announce X in brainrot", "skibidi announcement", "/brainrot-announce". For everyday Gen Z slang, use genz-announce.
 ---
 
 # Brainrot Announce
