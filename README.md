@@ -5,7 +5,7 @@ Skills and plugins for coding agents. One marketplace serves Claude Code, Codex 
 | Plugin | Skills | What it does |
 |---|---|---|
 | [herdr-extensions](plugins/herdr-extensions/README.md) | `herdr-new-task` | Starts a [Herdr](https://herdr.dev/) tab with an agent already primed on a task. Reads Linear or GitHub tickets, chat threads or a plain description. |
-| [summarizer](plugins/summarizer/README.md) | `clickbait-announce`, `genz-announce`, `brainrot-announce` | Turns shipped work into a Slack announcement in clickbait, Gen Z slang or meme brainrot style, built only from real commits, tickets and links. |
+| [summarizer](plugins/summarizer/README.md) | `clickbait-announce`, `genz-announce`, `brainrot-announce`, `british-slang-announce` | Turns shipped work into a Slack announcement in clickbait, Gen Z slang, meme brainrot or British slang style, built only from real commits, tickets and links. |
 
 ## Install
 

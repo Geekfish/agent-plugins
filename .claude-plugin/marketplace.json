@@ -27,7 +27,7 @@
     {
       "name": "summarizer",
       "source": "./plugins/summarizer",
-      "description": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style, Gen Z slang or meme brainrot.",
+      "description": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style, Gen Z slang, meme brainrot or British slang.",
       "author": {
         "name": "Eleni Lixourioti"
       },
