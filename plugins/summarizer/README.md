@@ -49,16 +49,16 @@ chat is this real 💀 6 7 🙌
 
 ## british-slang-announce
 
-Writes the post in British slang: innit, bruv, proper chuffed, sorted, Bob's your uncle. The post stays safe for work: no mild swearing such as "bloody", no drink slang, no accent spelling, and roast slang targets code, never people.
+Writes the post in current UK youth slang: innit, bruv, bare, allow it, gassed. The post stays safe for work: no mild swearing such as "bloody", no looks, drink or street slang, no accent spelling, and roast slang targets code, never people.
 
 Ask for example: "British slang announcement for my work on the dotfiles repo" or "announce ABC-123 in British slang".
 
 ```
-*dotfiles sorted, bob's your uncle* ☕🇬🇧🦀
+*allow it, the symlinks are gone* ☕🇬🇧🦀
 
-proper buzzing, innit 🫖
+bare gassed, innit 🫖
 
-• :rocket: *symlink faff is done and dusted* :tea:
+• :rocket: *symlink spaghetti got rinsed* :tea:
 `chezmoi apply` writes real files instead of 20 hand-made links.
 ```
 
