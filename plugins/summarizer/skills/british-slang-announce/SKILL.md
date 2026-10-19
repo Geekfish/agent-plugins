@@ -1,6 +1,6 @@
 ---
 name: british-slang-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in British slang. Slang examples: innit, bruv, bare, allow it. SFW. Triggers include "British slang announcement", "announce X in British slang", "innit bruv announcement", "/british-slang-announce".
+description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in British slang. Slang examples: innit, bruv, bare, allow it. SFW. Triggers include "British slang announcement", "announce X in British slang", "innit bruv announcement".
 ---
 
 # British Slang Announce
