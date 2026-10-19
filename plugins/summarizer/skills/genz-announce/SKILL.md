@@ -1,6 +1,6 @@
 ---
 name: genz-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in Gen Z slang. Output stays safe for work. Triggers include "Gen Z announcement", "announce X in Gen Z slang", "no cap announcement", "/genz-announce". For YouTube clickbait style, use clickbait-announce. For meme brainrot (skibidi, sigma, Italian brainrot), use brainrot-announce.
+description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in Gen Z slang. Output stays safe for work. Triggers include "Gen Z announcement", "announce X in Gen Z slang", "no cap announcement", "/genz-announce". For YouTube clickbait style, use clickbait-announce. For meme brainrot (skibidi, sigma, Italian brainrot), use brainrot-announce. For British slang (innit, bruv), use british-slang-announce.
 ---
 
 # Gen Z Announce

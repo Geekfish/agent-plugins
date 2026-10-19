@@ -1,7 +1,7 @@
 {
   "name": "summarizer",
-  "version": "1.2.0",
-  "description": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style, Gen Z slang or meme brainrot.",
+  "version": "1.3.0",
+  "description": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style, Gen Z slang, meme brainrot or British slang.",
   "author": {
     "name": "Eleni Lixourioti"
   },
@@ -15,7 +15,7 @@
   "interface": {
     "displayName": "Summarizer",
     "shortDescription": "Announce shipped work",
-    "longDescription": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style, Gen Z slang or meme brainrot.",
+    "longDescription": "Turn shipped work into short Slack announcements built from real commits and tickets, in YouTube clickbait style, Gen Z slang, meme brainrot or British slang.",
     "developerName": "Eleni Lixourioti",
     "category": "Productivity",
     "capabilities": [
@@ -25,7 +25,8 @@
     "defaultPrompt": [
       "Write a clickbait announcement for my latest work",
       "Announce my latest work in Gen Z slang",
-      "Announce my latest work in brainrot memes"
+      "Announce my latest work in brainrot memes",
+      "Announce my latest work in British slang"
     ]
   }
 }

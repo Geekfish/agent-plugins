@@ -47,13 +47,28 @@ chat is this real 💀 6 7 🙌
 `chezmoi apply` writes real files instead of 20 hand-made links.
 ```
 
+## british-slang-announce
+
+Writes the post in British slang: innit, bruv, proper chuffed, sorted, Bob's your uncle. The post stays safe for work: no mild swearing such as "bloody", no drink slang, no accent spelling, and roast slang targets code, never people.
+
+Ask for example: "British slang announcement for my work on the dotfiles repo" or "announce ABC-123 in British slang".
+
+```
+*dotfiles sorted, bob's your uncle* ☕🇬🇧🦀
+
+proper buzzing, innit 🫖
+
+• :rocket: *symlink faff is done and dusted* :tea:
+`chezmoi apply` writes real files instead of 20 hand-made links.
+```
+
 ## The `--calm` flag
 
-All skills accept `--calm`. The post keeps the same shape with one emoji per line. In clickbait-announce, only the title uses ALL CAPS. In genz-announce and brainrot-announce, only the hook and bullet titles use slang or memes.
+All skills accept `--calm`. The post keeps the same shape with one emoji per line. In clickbait-announce, only the title uses ALL CAPS. In genz-announce, brainrot-announce and british-slang-announce, only the hook and bullet titles use slang or memes.
 
 ## Shared rules
 
-The three skills share fact collection, emoji harvest, bullet shape, the `--calm` flag and the safe-for-work rules. They live in [references/announce-rules.md](references/announce-rules.md). Each skill adds its own budget, line formats and term tables.
+The skills share fact collection, emoji harvest, bullet shape, the `--calm` flag and the safe-for-work rules. They live in [references/announce-rules.md](references/announce-rules.md). Each skill adds its own budget, line formats and term tables.
 
 ## Requirements
 
