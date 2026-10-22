@@ -15,14 +15,14 @@ As in the shared rules.
 
 ## 2. Harvest workspace emoji
 
-As in the shared rules. Mood terms for the second search: `teapot,tea_cup,cuppa,biscuit,cheers,crown`.
+As in the shared rules. Mood terms for the second search: `teapot,biscuit,cheers,crown,london,bus`.
 
 ## 3. Compose
 
-Budget: 100 to 160 words, excluding links and code. Fixed shape, this order:
+Budget: 100 to 160 words, excluding links and code. Tea emoji (`☕`, `🫖`, `:tea:`, custom tea emoji): 1 to 2 per post. Fixed shape, this order:
 
-1. **Hook**, one line, all lowercase, bold with single asterisks. One format from the table. 2 to 3 Unicode emoji: `☕`, `🫖`, `🇬🇧`, `💂`, `🌧️`, `🍪`, `🚌`.
-2. **Reaction**, one line, 2 to 6 words. "bare gassed, innit 🫖", "absolute scenes 😤", "swear down".
+1. **Hook**, one line, all lowercase, bold with single asterisks. One format from the table. 2 to 3 Unicode emoji: `🇬🇧`, `💂`, `🌧️`, `🚌`, `🍪`, `☕`, `🫖`.
+2. **Reaction**, one line, 2 to 6 words. "bare gassed, innit 🙌", "absolute scenes 😤", "swear down".
 3. **Body**, bullets as in the shared shape. Bullet titles carry the slang. At most one slang term on a fact line.
 4. **Sign-off**, 1 to 2 lines ("safe bruv, bugs in the thread", "kettle's on ☕"), then the links.
 
@@ -67,11 +67,11 @@ As in the shared rules.
 ## Example
 
 ```
-*allow it, the symlinks are gone* ☕🇬🇧🦀
+*allow it, the symlinks are gone* 🇬🇧💂🦀
 
-bare gassed, innit 🫖
+bare gassed, innit 🙌
 
-• :rocket: *symlink spaghetti got rinsed* :tea:
+• :rocket: *symlink spaghetti got rinsed* :sparkles:
 `chezmoi apply` writes real files instead of 20 hand-made links.
 
 • :lock: *secrets stay home, swear down* :eyes:

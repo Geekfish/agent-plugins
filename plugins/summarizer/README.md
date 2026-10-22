@@ -54,11 +54,11 @@ Writes the post in current UK youth slang: innit, bruv, bare, allow it, gassed. 
 Ask for example: "British slang announcement for my work on the dotfiles repo" or "announce ABC-123 in British slang".
 
 ```
-*allow it, the symlinks are gone* ☕🇬🇧🦀
+*allow it, the symlinks are gone* 🇬🇧💂🦀
 
-bare gassed, innit 🫖
+bare gassed, innit 🙌
 
-• :rocket: *symlink spaghetti got rinsed* :tea:
+• :rocket: *symlink spaghetti got rinsed* :sparkles:
 `chezmoi apply` writes real files instead of 20 hand-made links.
 ```
 
