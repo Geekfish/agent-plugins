@@ -1,6 +1,6 @@
 ---
 name: brainrot-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in internet brainrot meme style, such as Italian brainrot creatures, skibidi, sigma, Ohio, 6 7. SFW. Triggers include "brainrot announcement", "announce X in brainrot", "skibidi announcement".
+description: Team update or Slack hype post on shipped work in SFW brainrot (skibidi, sigma, Ohio, 6 7, Italian brainrot). Use for "brainrot announcement" or "announce X in brainrot".
 ---
 
 # Brainrot Announce
