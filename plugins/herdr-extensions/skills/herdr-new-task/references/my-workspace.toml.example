@@ -3,6 +3,8 @@
 #
 #   label        Herdr workspace label. Matched case-insensitively.
 #   cwd          Directory new tabs open in. A leading ~ expands to $HOME.
+#                For a workspace over several projects, a list of { path, hint }.
+#                The first entry is the default. hint says which tasks go there.
 #   description  What the workspace is for. Also used to infer the workspace from a task.
 #   named_only   Optional. true = never inferred, used only when the user names it.
 #   prompt_suffix Optional. Sentence appended to every agent prompt started in this workspace.
@@ -16,3 +18,11 @@ label = "Orchestrator"
 cwd = "~/workspace/"
 description = "Coordinating work across other workspaces"
 named_only = true
+
+[[workspace]]
+label = "Web Shop"
+description = "Storefront and its payment service"
+cwd = [
+  { path = "~/workspace/shop-web", hint = "Storefront UI and checkout pages" },
+  { path = "~/workspace/shop-payments", hint = "Payment service, refunds, provider webhooks" },
+]
