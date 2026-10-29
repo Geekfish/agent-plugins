@@ -1,6 +1,6 @@
 ---
 name: genz-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work in Gen Z slang. SFW. Triggers include "Gen Z announcement", "announce X in Gen Z slang", "no cap announcement".
+description: Team update or Slack hype post on shipped work in SFW Gen Z slang (no cap). Use for "Gen Z announcement" or "announce X in Gen Z slang".
 ---
 
 # Gen Z Announce

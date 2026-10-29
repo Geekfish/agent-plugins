@@ -1,6 +1,6 @@
 ---
 name: clickbait-announce
-description: Use when the user wants a Slack announcement, team update, or hype post about shipped work written like a YouTube clickbait title and thumbnail, with heavy emoji. Triggers include "clickbait announcement", "YouTube-style announcement", "hype up my work on X", "announce X like a YouTuber".
+description: Team update or Slack hype post on shipped work as a YouTube clickbait title + thumbnail, emoji-heavy. For "clickbait" or "YouTube-style" announcements, "hype up my work on X".
 ---
 
 # Clickbait Announce
