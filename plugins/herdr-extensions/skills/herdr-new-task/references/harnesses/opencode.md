@@ -1,50 +1,63 @@
 # OpenCode
 
-Use this file only when the selected kind is `opencode`. It launches with `herdr agent start` like the other kinds in step 7.
+If the selected kind is `opencode`, use this file. Do not use it for other kinds. It is for OpenCode v2. It launches with `herdr agent start` like the other kinds in step 7.
 
 ## Model and effort
 
-Resolve both a model and reasoning effort before creating the work tab. Use values already supplied by the user. Otherwise ask for the missing value. Accept any full model ID returned by `opencode models`. These shorthands are conveniences, not an allowlist:
+Resolve both a model and reasoning effort before you create the work tab. Use values that the user already gave. Otherwise ask for the missing value. List the models and their efforts:
 
-| Shorthand | Model ID |
-|---|---|
-| `luna` | `openai/gpt-5.6-luna` |
-| `sol` | `openai/gpt-5.6-sol` |
-| `terra` | `openai/gpt-5.6-terra` |
-| `astra` | `openai/gpt-6-astra` |
+```bash
+opencode api model.list | jq -r '.data[] | "\(.providerID)/\(.id)  \(.name)  [\([.variants[]?.id]|join(","))]"'
+```
 
-Reasoning efforts commonly include `none`, `minimal`, `low`, `medium`, `high`, and `xhigh`. The selected model decides which ones are available. For example, "OpenCode sol xhigh" means model `openai/gpt-5.6-sol` with `xhigh` effort.
+If a plugin does not load, `opencode models` fails. Use this command instead. A model with an empty list has no efforts. In that case, skip the effort and report it.
+
+Match the model name of the user to a name in the list. If several versions match, use the latest. If more than one model still matches, ask the user. For example, "OpenCode sol xhigh" means the model `GPT-6.1 Sol` with the `xhigh` effort, and "kimi" means `kimi-k3`. Type that name in the model picker.
 
 ## Launch
 
-Arguments after `--`:
+The OpenCode v2 TUI has no `--model` flag, and it has no flag for the effort. Arguments after `--`:
 
 ```
---model <MODEL_ID> --auto
+--auto
 ```
 
-`--auto` routes OpenCode approval requests through automatic review. Explicit permission denials still apply.
+`--auto` approves permission requests that are not explicitly denied. Do not pass `--prompt`, because OpenCode then sends the task before you can set the model.
 
-The pane is ready when it shows the OpenCode input box with its model in the footer.
+The TUI uses the background service. Do not set `OPENCODE_CONFIG_CONTENT` or `--standalone`. The service ignores the variable, and `--standalone` starts without the providers of the service.
 
-## Set the effort
+When the pane shows the input box and a footer line `Build auto · <model name> <provider>`, it is ready.
 
-OpenCode represents reasoning effort internally as a model variant, but has no TUI startup flag for it. After it is ready, read the pane and check the effort shown beside the model. If it is not the requested effort, cycle efforts with OpenCode's `variant_cycle` key and read the pane after each keypress:
+## Set the model and effort
+
+Read the pane after each step, because a picker that is still open takes the next text.
 
 ```bash
-herdr agent send-keys <AGENT_NAME> ctrl+t
-herdr pane read <PANE_ID> | tail -15
+herdr pane send-text <PANE_ID> "/model"
+herdr pane send-keys <PANE_ID> enter
+herdr pane send-text <PANE_ID> "<PICKER_NAME>"
+herdr pane send-keys <PANE_ID> enter
+herdr pane read <PANE_ID> | grep 'Build'
 ```
 
-Stop when the requested effort is visible. Stop after one full cycle if it is unavailable, report the efforts observed, and ask the user to choose one. Do not send the task prompt until the requested effort is visible.
+Then do the same with `/effort` and the effort name. The footer then ends with `· <effort>`. If the picker does not work, cycle the efforts with `ctrl+t`. Do not send the task prompt until the footer shows the requested model and effort.
+
+The model and effort are shared by all OpenCode TUIs on the same service. A change also applies to other OpenCode panes that have not sent a prompt yet. If such a pane exists, report this in step 8.
 
 ## Example
 
-OpenCode with Sol and xhigh effort. Repeat `ctrl+t` until `xhigh` is visible:
+OpenCode with Sol and xhigh effort:
 
 ```bash
-herdr agent start abc123profilepostcodedropped --kind opencode --pane pane-123 --timeout 60000 -- --model openai/gpt-5.6-sol --auto
-herdr agent send-keys abc123profilepostcodedropped ctrl+t
-herdr pane read pane-123 | tail -15
-herdr agent prompt abc123profilepostcodedropped "Work on https://linear.app/acme/issue/ABC-123. Start by reading the ticket, then investigate in this workspace."
+herdr agent start abc123profilepostcodedropped --kind opencode --pane pane-123 --timeout 60000 -- --auto
+herdr pane send-text pane-123 "/model"
+herdr pane send-keys pane-123 enter
+herdr pane send-text pane-123 "GPT-6.1 Sol"
+herdr pane send-keys pane-123 enter
+herdr pane send-text pane-123 "/effort"
+herdr pane send-keys pane-123 enter
+herdr pane send-text pane-123 "xhigh"
+herdr pane send-keys pane-123 enter
+herdr pane read pane-123 | grep 'Build'
+herdr agent prompt abc123profilepostcodedropped "Work on https://linear.app/acme/issue/ABC-123 . Your full brief is in <BRIEF_PATH> : read it first and follow it."
 ```

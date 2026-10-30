@@ -1,7 +1,7 @@
 ---
 name: herdr-new-task
 description: Start a Herdr tab with an agent primed on a task. Use when asked to start a new tab or task for a prompt, issue or thread, optionally naming a workspace, agent, model or effort.
-allowed-tools: Read, Bash(herdr:*), Bash(jq:*), Bash(cp:*), Bash(test:*), Bash(gh issue:*), Bash(gh repo view:*), mcp__Linear__get_issue, mcp__Linear__list_teams, mcp__Linear__save_issue, mcp__claude_ai_Slack__slack_read_thread
+allowed-tools: Read, Bash(herdr:*), Bash(jq:*), Bash(opencode api:*), Bash(cp:*), Bash(test:*), Bash(gh issue:*), Bash(gh repo view:*), mcp__Linear__get_issue, mcp__Linear__list_teams, mcp__Linear__save_issue, mcp__claude_ai_Slack__slack_read_thread
 ---
 
 # Herdr New Task
