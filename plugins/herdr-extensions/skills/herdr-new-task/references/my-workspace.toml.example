@@ -10,8 +10,11 @@
 #   prompt_suffix Optional. Sentence appended to every agent prompt started in this workspace.
 #   tracker      Optional. "linear", "github" (repo of cwd) or "github:<owner>/<repo>".
 #                A top-level tracker key sets the default for all workspaces.
+#   agent        Optional. Agent kind for new tabs, e.g. "opencode". Default "claude".
+#                A top-level agent key sets the default for all workspaces.
 
 # tracker = "github"
+# agent = "opencode"
 
 [[workspace]]
 label = "Orchestrator"
