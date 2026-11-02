@@ -11,4 +11,5 @@ If `~/my-workspace.toml` does not exist, set it up with the user before continui
 
 2. Show them as a draft list, label and folder. Ask which to keep, which to add, and a one-line description for each.
 3. Ask where their tickets live (`linear`, `github` or none), to set the top-level `tracker`.
+   Ask which agent kind new tabs use. Set the top-level `agent` unless they pick `claude`.
 4. Draft `~/my-workspace.toml` in the format of `my-workspace.toml.example`, next to this file. Show the draft. **Wait for approval**, then write it.

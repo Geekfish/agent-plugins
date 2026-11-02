@@ -24,6 +24,7 @@ Read `~/my-workspace.toml`, one `[[workspace]]` block per Herdr workspace:
 | `named_only` | Optional. If `true`, use only when the user names it. |
 | `prompt_suffix` | Optional. A sentence that ends the brief. |
 | `tracker` | Optional. `linear`, `github` (the repo of the default cwd), or `github:<owner>/<repo>`. A top-level `tracker` sets the default. Else ask the user when a step needs it. |
+| `agent` | Optional. The agent kind for new tabs, for example `opencode`. A top-level `agent` sets the default. Else `claude`. |
 
 If the file does not exist, follow [setup](references/setup.md) first. If the user names a workspace that is not in the file, ask for its cwd and description, then append a `[[workspace]]` block before continuing.
 
@@ -49,7 +50,7 @@ Use the workspace the user named. Else pick the best `description` fit, skipping
 
 ### Step 2a — Select the agent
 
-Kind is `claude` unless the user asks for another. For `claude` or `codex`, pass a model or effort only if the user gives one.
+Kind is the one the user asks for. Else the workspace `agent`, then the top-level `agent`, then `claude`. For `claude` or `codex`, pass a model or effort only if the user gives one.
 
 Read the first `<kind>.md` harness file found in `references/harnesses/`, then `~/.config/herdr-new-task/harnesses/`, before creating the work tab. For that kind, it overrides this skill. For a kind other than `claude`, also read [other kinds](references/other-kinds.md) now.
 
