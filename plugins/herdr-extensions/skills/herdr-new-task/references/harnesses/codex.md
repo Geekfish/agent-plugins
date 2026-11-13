@@ -1,6 +1,6 @@
 # Codex
 
-If the selected kind is `codex`, use this file. It launches with `herdr agent start` like the other kinds in step 7.
+If the selected kind is `codex`, use this file. It launches with `herdr agent start` like the other kinds in step 6.
 
 ## Launch
 
