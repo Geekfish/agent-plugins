@@ -34,7 +34,7 @@ If the file does not exist, follow [setup](references/setup.md) first. If the us
 
 **Chat thread URL**: read the thread with the chat tool you have. Scan its text, attachments and link previews for a ticket URL or id. Take the first one and read it.
 
-Keep every resolved URL for step 7.
+Keep every resolved URL for step 6.
 
 ### Step 1a — No ticket
 
@@ -75,21 +75,15 @@ herdr workspace list | jq -r '.result.workspaces[] | .workspace_id + " " + .labe
 
 Match the label case-insensitively. If several match, use the first and report it. With no match, follow [new workspace](references/new-workspace.md).
 
-## Step 5 — Ensure a "Term" tab
+## Step 5 — Create the work tab
+
+Skip this step if step 4 created the workspace. Its first tab is the work tab.
 
 ```bash
 herdr tab list --workspace <WS_ID> | jq -r '.result.tabs[] | .tab_id + " " + .label'
 ```
 
-If no label matches `^Term$` (case-insensitive), create one. Never start an agent in it. Do not close or rename tabs you did not create.
-
-```bash
-herdr tab create --workspace <WS_ID> --cwd "<DEFAULT_CWD>" --label "Term" --no-focus
-```
-
-## Step 6 — Create the work tab
-
-If a step 5 label contains the ticket id (or slug), report it and ask whether to reuse it or create a second.
+If a label contains the ticket id (or slug), report it and ask whether to reuse it or create a second. Do not close or rename tabs you did not create.
 
 ```bash
 herdr tab create --workspace <WS_ID> --cwd "<TASK_CWD>" --label "<LABEL>" --no-focus
@@ -97,7 +91,7 @@ herdr tab create --workspace <WS_ID> --cwd "<TASK_CWD>" --label "<LABEL>" --no-f
 
 The pane id is at `.result.root_pane.pane_id`. Keep `--no-focus` on every command unless the user asks to switch.
 
-## Step 7 — Start the agent
+## Step 6 — Start the agent
 
 Agent name: the label lowercased, non-alphanumerics removed, cut to 32 characters. It must match `[a-z][a-z0-9_-]{0,31}` and be unique in `herdr agent list`. If taken, append `-2`.
 
@@ -137,13 +131,12 @@ herdr agent list | jq -c '.result.agents[] | select(.pane_id=="<PANE_ID>")'
 
 The agent runs if the pane shows its input box (for `claude`, the Claude Code prompt box) and `herdr agent list` has its row. If not, follow [launch recovery](references/launch-recovery.md). Ignore a failed MCP server, but report it.
 
-## Step 8 — Report back
+## Step 7 — Report back
 
 Output exactly these lines and nothing else:
 
 ```
 - Workspace "<workspace label>" (<workspace id>) created
-- Tab "Term" created
 - Tab "<tab label>" created in <TASK_CWD>
 - Agent <agent name> (<kind>) prompted with <the full prompt text you sent>
 - Agent <agent name> (<kind>, <model> <effort>) prompted with <the full prompt text you sent>
@@ -151,4 +144,4 @@ Output exactly these lines and nothing else:
 - Ticket <TICKET-ID> assigned to you
 ```
 
-Use one agent line, with model and effort if selected. Say `created` or `updated` for the workspace. Include `Tab "Term"` only if this skill made or renamed it. Include the ticket line only if this skill changed the assignee. If someone else holds it, write `- Ticket <TICKET-ID> already assigned to <name>`. Add a line for an inferred workspace, an agent restart, or a failed MCP server. Harness files can add lines.
+Use one agent line, with model and effort if selected. Say `created` or `updated` for the workspace. Include the ticket line only if this skill changed the assignee. If someone else holds it, write `- Ticket <TICKET-ID> already assigned to <name>`. Add a line for an inferred workspace, an agent restart, or a failed MCP server. Harness files can add lines.

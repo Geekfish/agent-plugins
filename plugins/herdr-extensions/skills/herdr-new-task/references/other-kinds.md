@@ -8,7 +8,7 @@ A kind not in this list and without a harness file is not supported: say so and 
 
 ## Send the prompt
 
-After the step 7 check, send the prompt. Skip this for `claude` and for a harness that passes the prompt at launch. Send without `--wait`, then confirm:
+After the step 6 check, send the prompt. Skip this for `claude` and for a harness that passes the prompt at launch. Send without `--wait`, then confirm:
 
 ```bash
 herdr agent prompt <AGENT_NAME> "<PROMPT>"

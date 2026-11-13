@@ -1,6 +1,6 @@
 # OpenCode
 
-If the selected kind is `opencode`, use this file. Do not use it for other kinds. It is for OpenCode v2. It launches with `herdr agent start` like the other kinds in step 7.
+If the selected kind is `opencode`, use this file. Do not use it for other kinds. It is for OpenCode v2. It launches with `herdr agent start` like the other kinds in step 6.
 
 ## Model and effort
 
@@ -42,7 +42,7 @@ herdr pane read <PANE_ID> | grep 'Build'
 
 Then do the same with `/effort` and the effort name. The footer then ends with `· <effort>`. If the picker does not work, cycle the efforts with `ctrl+t`. Do not send the task prompt until the footer shows the requested model and effort.
 
-The model and effort are shared by all OpenCode TUIs on the same service. A change also applies to other OpenCode panes that have not sent a prompt yet. If such a pane exists, report this in step 8.
+The model and effort are shared by all OpenCode TUIs on the same service. A change also applies to other OpenCode panes that have not sent a prompt yet. If such a pane exists, report this in step 7.
 
 ## Example
 
