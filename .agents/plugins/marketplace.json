@@ -6,6 +6,18 @@
   },
   "plugins": [
     {
+      "name": "disk-cleanup",
+      "source": {
+        "source": "local",
+        "path": "./plugins/disk-cleanup"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "herdr-extensions",
       "source": {
         "source": "local",

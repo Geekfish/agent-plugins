@@ -9,6 +9,22 @@
   },
   "plugins": [
     {
+      "name": "disk-cleanup",
+      "source": "./plugins/disk-cleanup",
+      "description": "Find what fills a Mac disk and plan a safe cleanup: Spotlight, root's Bin, container logs and volumes, Homebrew, mise, build artefacts and app caches.",
+      "author": {
+        "name": "Eleni Lixourioti"
+      },
+      "keywords": [
+        "disk",
+        "cleanup",
+        "macos",
+        "docker",
+        "homebrew"
+      ],
+      "category": "productivity"
+    },
+    {
       "name": "herdr-extensions",
       "source": "./plugins/herdr-extensions",
       "description": "Start Herdr tabs with an agent already primed on a task from a Linear or GitHub ticket, a chat thread or a plain description.",
