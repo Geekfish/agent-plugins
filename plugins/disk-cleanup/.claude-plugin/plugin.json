@@ -1,0 +1,15 @@
+{
+  "name": "disk-cleanup",
+  "version": "1.0.0",
+  "description": "Find what fills a Mac disk and plan a safe cleanup: Spotlight, root's Bin, container logs and volumes, Homebrew, mise, build artefacts and app caches.",
+  "author": {
+    "name": "Eleni Lixourioti"
+  },
+  "keywords": [
+    "disk",
+    "cleanup",
+    "macos",
+    "docker",
+    "homebrew"
+  ]
+}

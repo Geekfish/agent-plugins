@@ -1,0 +1,31 @@
+{
+  "name": "disk-cleanup",
+  "version": "1.0.0",
+  "description": "Find what fills a Mac disk and plan a safe cleanup: Spotlight, root's Bin, container logs and volumes, Homebrew, mise, build artefacts and app caches.",
+  "author": {
+    "name": "Eleni Lixourioti"
+  },
+  "keywords": [
+    "disk",
+    "cleanup",
+    "macos",
+    "docker",
+    "homebrew"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Disk Cleanup",
+    "shortDescription": "Free disk space on a Mac",
+    "longDescription": "Find what fills a Mac disk with a read-only survey, then give a ranked cleanup plan with sizes, commands and risks. Deletes only the items you approve.",
+    "developerName": "Eleni Lixourioti",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "My disk is almost full, find out why",
+      "Free up disk space on my Mac"
+    ]
+  }
+}

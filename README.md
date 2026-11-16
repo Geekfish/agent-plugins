@@ -4,6 +4,7 @@ Skills and plugins for coding agents. One marketplace serves Claude Code, Codex 
 
 | Plugin | Skills | What it does |
 |---|---|---|
+| [disk-cleanup](plugins/disk-cleanup/README.md) | `free-disk-space` | Finds what fills a Mac disk with a read-only survey, then gives a ranked cleanup plan with sizes, commands and risks. Deletes only the items you approve. |
 | [herdr-extensions](plugins/herdr-extensions/README.md) | `herdr-new-task` | Starts a [Herdr](https://herdr.dev/) tab with an agent already primed on a task. Reads Linear or GitHub tickets, chat threads or a plain description. |
 | [summarizer](plugins/summarizer/README.md) | `clickbait-announce`, `genz-announce`, `brainrot-announce`, `british-slang-announce` | Turns shipped work into a Slack announcement in clickbait, Gen Z slang, meme brainrot or British slang style, built only from real commits, tickets and links. |
 
@@ -13,6 +14,7 @@ Skills and plugins for coding agents. One marketplace serves Claude Code, Codex 
 
 ```zsh
 claude plugin marketplace add Geekfish/agent-plugins
+claude plugin install disk-cleanup@geekfish
 claude plugin install herdr-extensions@geekfish
 claude plugin install summarizer@geekfish
 ```
@@ -21,6 +23,7 @@ claude plugin install summarizer@geekfish
 
 ```zsh
 codex plugin marketplace add Geekfish/agent-plugins
+codex plugin add disk-cleanup@geekfish
 codex plugin add herdr-extensions@geekfish
 codex plugin add summarizer@geekfish
 ```

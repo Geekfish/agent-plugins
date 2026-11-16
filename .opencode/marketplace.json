@@ -2,6 +2,13 @@
   "name": "geekfish",
   "plugins": [
     {
+      "name": "disk-cleanup",
+      "source": "./plugins/disk-cleanup",
+      "skills": [
+        "skills"
+      ]
+    },
+    {
       "name": "herdr-extensions",
       "source": "./plugins/herdr-extensions",
       "skills": [
